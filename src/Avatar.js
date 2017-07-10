@@ -1,5 +1,5 @@
 import React from "react";
-import {Image, StyleSheet, View, TouchableOpacity} from "react-native";
+import {Image, StyleSheet, View, ViewPropTypes, TouchableOpacity} from "react-native";
 import GiftedAvatar from "./GiftedAvatar";
 import {isSameUser, isSameDay, warnDeprecated} from "./utils";
 
@@ -109,12 +109,12 @@ Avatar.propTypes = {
   nextMessage: React.PropTypes.object,
   onPressAvatar: React.PropTypes.func,
   containerStyle: React.PropTypes.shape({
-    left: View.propTypes.style,
-    right: View.propTypes.style,
+    left: ViewPropTypes.style,
+    right: ViewPropTypes.style,
   }),
   imageStyle: React.PropTypes.shape({
-    left: View.propTypes.style,
-    right: View.propTypes.style,
+    left: ViewPropTypes.style,
+    right: ViewPropTypes.style,
   }),
   //TODO: remove in next major release
   isSameDay: React.PropTypes.func,

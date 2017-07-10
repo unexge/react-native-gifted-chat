@@ -1,12 +1,12 @@
 import React from 'react';
 import {
   Linking,
-  MapView,
   Platform,
   StyleSheet,
   TouchableOpacity,
-  View,
+  ViewPropTypes,
 } from 'react-native';
+import MapView from 'react-native-maps';
 
 export default class CustomView extends React.Component {
   render() {
@@ -30,11 +30,9 @@ export default class CustomView extends React.Component {
             region={{
               latitude: this.props.currentMessage.location.latitude,
               longitude: this.props.currentMessage.location.longitude,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
             }}
-            annotations={[{
-              latitude: this.props.currentMessage.location.latitude,
-              longitude: this.props.currentMessage.location.longitude,
-            }]}
             scrollEnabled={false}
             zoomEnabled={false}
           />
@@ -64,6 +62,6 @@ CustomView.defaultProps = {
 
 CustomView.propTypes = {
   currentMessage: React.PropTypes.object,
-  containerStyle: View.propTypes.style,
-  mapViewStyle: View.propTypes.style,
+  containerStyle: ViewPropTypes.style,
+  mapViewStyle: ViewPropTypes.style,
 };
